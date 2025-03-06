@@ -10,10 +10,22 @@ export default {
     },
     devServer: {
         static: {
-          directory: path.join(import.meta.dirname, 'public'),
+            directory: path.join(import.meta.dirname, 'public'),
         },
         compress: true,
         port: 9000,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.scss$/i,
+                use: ["style-loader", "css-loader", "sass-loader"],
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
