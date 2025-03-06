@@ -1,6 +1,4 @@
-@use 'sass:color';
-
-$bgcolor: coral;
-body {
-    background-color: color.scale($bgcolor, $lightness: -20%);
-}
+$primary: coral;
+@use "bootstrap/scss/bootstrap" with (
+    $primary: coral
+);
